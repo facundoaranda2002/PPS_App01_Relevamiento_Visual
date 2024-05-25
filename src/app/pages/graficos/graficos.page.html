@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button (click)="goHome()" color="primary"> Página Principal </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    @defer {
+      <h1 class="list-header">Cosas Lindas</h1>
+      <app-grafico-barras></app-grafico-barras>
+        
+        <h1 class="list-header">Cosas Feas</h1>
+        <app-grafico-barras-real></app-grafico-barras-real>
+    }
+    @placeholder {
+      <ion-spinner class="spinner" name="lines"></ion-spinner>
+    } @loading (minimum 2s) {
+      <ion-spinner class="spinner" name="lines"></ion-spinner>  
+    }
+
+</ion-content>

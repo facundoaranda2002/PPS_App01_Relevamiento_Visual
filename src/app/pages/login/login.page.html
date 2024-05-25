@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button (click)="goRegister()" color="primary"> Registrarse </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container-a">
+    <form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>Ingresa a tu cuenta</h1>
+        <ion-item color="primary">
+          <ion-input type="email" label="Correo Electrónico" placeholder="Ingrese el correo electrónico" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item color="primary">
+          <ion-input type="password" label="Contraseña" placeholder="Ingrese la contraseña" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-button type="submit" expand="block" shape="round">Ingresar</ion-button>
+        <ion-toast color="danger" [isOpen]="isToastOpen" message="Correo o contraseña incorrectos" [duration]="3000" (didDismiss)="setOpen(false)"></ion-toast>
+    </form>
+
+    <h2>Usuarios pre registrados</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12"><ion-button color="secondary" (click)="userA()">Usuario 1</ion-button></ion-col>
+        <ion-col size="12"><ion-button color="secondary" (click)="userB()">Usuario 2</ion-button></ion-col>
+        <ion-col size="12"><ion-button color="secondary" (click)="userC()">Usuario 3</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ppsapp01</string>
+    <string name="title_activity_main">ppsapp01</string>
+    <string name="package_name">app1.fotos</string>
+    <string name="custom_url_scheme">app1.fotos</string>
+</resources>

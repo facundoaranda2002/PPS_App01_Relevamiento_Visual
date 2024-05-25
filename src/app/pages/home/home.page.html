@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    @if(this.authService.currentUserSig() == null)
+    {
+      <ion-button (click)="goLogin()"> Ingresar </ion-button>
+      <ion-button (click)="goRegister()"> Registrarse </ion-button>
+    }
+    @if(this.authService.currentUserSig())
+    {
+      <ion-button (click)="goCosasGraficos()"> Gráficos </ion-button>
+      <ion-button (click)="logout()"> Salir </ion-button>
+    }
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="favorite">
+  <div class="container">
+    @if(this.authService.currentUserSig())
+    {
+      @defer {
+        <ion-button color="primary" (click)="goCosasLindas()"
+          ><img src="../../../assets/superestrella.png" alt="Cosas Lindas"
+        /></ion-button>
+        <ion-button class="segundoBtn" color="primary" (click)="goCosasFeas()"
+          ><img src="../../../assets/enfadado.png" alt="Cosas Feas"
+        /></ion-button> 
+      } @placeholder {
+        <ion-spinner class="spinner" name="lines"></ion-spinner>
+      } @loading (minimum 2s) {
+        <ion-spinner class="spinner" name="lines"></ion-spinner>  
+      }
+    }
+    
+  </div>  
+</ion-content>
